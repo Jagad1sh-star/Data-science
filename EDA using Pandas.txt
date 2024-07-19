@@ -1,0 +1,66 @@
+-------------------------------EDA using Pandas
+
+Read data:  pd.read_*()
+
+
+View data: head(), tail()
+
+----------------------------------Information about data:
+
+pd.DataFrame.info()
+pd.shape()
+pd.columns()
+
+----------------------------------Summary statistics:
+
+pd.DataFrame.Describe()
+
+
+--------------------------------data selection by indexing and slicing
+
+Extracting data as series:   data['Age']
+Extracting data as dataframe:   data[['Age']]
+
+Extracting data using rows: 
+ loc: locate the rows by name
+df.loc[['Age']][[30]]
+
+iloc: locates the rows by integer
+df.iloc[10:15][['BE']]
+
+data selection by conditional filtering
+
+df[((df['Geneder']=='male') & (data['Age'] == 30))]
+
+-------------------------------------Handling the missing values:
+
+Detecting missing values
+df.isnull().sum()
+
+--------------------------------------Removing missing values
+
+drop all rows with missing values
+df.dropna()
+
+drop all columns with missing values
+df.dropna(axis = 1)
+
+drop the duplicate values
+
+df.drop_duplicate('Age')
+
+-------------------------------------Filling missing values
+
+df.fillna(x)
+
+
+
+----------------------------------------Groupby operations
+
+df.groupby('Gender')[['Age']].mean()
+
+sorting operation
+df.sort_values()
+apply function
+
+df.apply()
